@@ -1,4 +1,4 @@
-:root {
+﻿:root {
   --bg: #f6efe8;
   --bg-soft: #fbf6f2;
   --surface: #fffdf9;
@@ -1163,6 +1163,10 @@ p {
   align-items: stretch;
 }
 
+.editorial-card-grid--courses > * {
+  min-width: 0;
+}
+
 .course-card {
   display: grid;
   gap: 1rem;
@@ -1171,25 +1175,30 @@ p {
   border-radius: 24px;
   background: rgba(255, 255, 255, 0.68);
   box-shadow: var(--shadow-soft);
+  min-width: 0;
 }
 
 .course-card--featured {
   grid-template-columns: minmax(240px, 1fr) minmax(0, 0.95fr);
   padding: 1.1rem;
+  align-items: start;
 }
 
 .course-card__content {
   display: grid;
   gap: 0.9rem;
+  min-width: 0;
 }
 
 .course-card h2 {
   font-size: clamp(1.9rem, 3vw, 3.2rem);
   line-height: 0.98;
+  overflow-wrap: anywhere;
 }
 
 .course-card h3 {
   font-size: clamp(1.35rem, 2vw, 1.9rem);
+  overflow-wrap: anywhere;
 }
 
 .course-card__image {
@@ -1375,6 +1384,29 @@ p {
 }
 
 @media (max-width: 959px) {
+  .container {
+    width: min(calc(100% - 1rem), var(--container));
+  }
+
+  h2 {
+    font-size: clamp(1.7rem, 7vw, 2.25rem);
+    line-height: 1;
+  }
+
+  h3 {
+    font-size: clamp(1.2rem, 5.4vw, 1.55rem);
+  }
+
+  h1,
+  h2,
+  h3 {
+    overflow-wrap: anywhere;
+  }
+
+  .section {
+    padding: 3.5rem 0;
+  }
+
   .site-header__bar {
     grid-template-columns: 1fr auto;
     gap: 1rem;
@@ -1462,8 +1494,31 @@ p {
     font-size: clamp(2.8rem, 11vw, 4.4rem);
   }
 
+  .section-header {
+    max-width: 100%;
+  }
+
+  .quote-arrows {
+    display: none;
+  }
+
+  .page-intro__card,
+  .contact-card,
+  .course-card,
+  .philosophy-card,
+  .story-card,
+  .info-card,
+  .legal-card {
+    padding: 1.15rem;
+  }
+
   .feature-tile--large {
     grid-row: auto;
+  }
+
+  .feature-tile {
+    min-height: 0;
+    padding: 1.15rem;
   }
 
   .page-intro__media-note {
@@ -1508,6 +1563,13 @@ p {
     width: 100%;
   }
 
+  .contact-card h2,
+  .spotlight__copy h2,
+  .story-card h2,
+  .section-header h2 {
+    font-size: clamp(1.65rem, 7vw, 2.15rem);
+  }
+
   .site-footer__row {
     grid-template-columns: 1fr;
   }
@@ -1516,3 +1578,4 @@ p {
     display: inline-flex;
   }
 }
+
