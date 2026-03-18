@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://hebamme-rieke.de/sitemap.xml
