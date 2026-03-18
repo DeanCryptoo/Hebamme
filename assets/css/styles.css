@@ -43,6 +43,7 @@ body {
   line-height: 1.7;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
 }
 
 img {
@@ -867,6 +868,10 @@ p {
   background: rgba(255, 255, 255, 0.6);
 }
 
+.contact-grid--contact-page {
+  align-items: start;
+}
+
 .contact-list__item a {
   color: var(--violet-deep);
   font-weight: 600;
@@ -1204,6 +1209,7 @@ p {
   justify-content: space-between;
   align-items: center;
   gap: 1rem;
+  flex-wrap: wrap;
   padding-top: 1rem;
   border-top: 1px solid var(--line);
 }
@@ -1310,6 +1316,16 @@ p {
 .dark-cta .button--soft {
   color: rgba(255, 255, 255, 0.94);
   border-color: rgba(255, 255, 255, 0.2);
+}
+
+@media (max-width: 1180px) {
+  .editorial-card-grid--courses {
+    grid-template-columns: 1fr;
+  }
+
+  .course-card--featured {
+    grid-template-columns: minmax(240px, 0.92fr) minmax(0, 1.08fr);
+  }
 }
 
 .site-footer {
@@ -1481,6 +1497,15 @@ p {
 
   .dark-cta {
     padding: 2rem 1.3rem;
+  }
+
+  .course-card__footer {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .course-card__footer .button {
+    width: 100%;
   }
 
   .site-footer__row {
