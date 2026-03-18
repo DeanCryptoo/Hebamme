@@ -222,7 +222,7 @@ p {
 }
 
 .site-header__meta a {
-  color: #ffddb8;
+  color: var(--violet-deep);
 }
 
 .site-header__bar {
@@ -393,6 +393,11 @@ textarea:focus-visible {
 .hero__title {
   margin-top: 1rem;
   max-width: 11ch;
+}
+
+.hero__title em {
+  color: var(--violet-deep);
+  font-style: italic;
 }
 
 .hero__lede {
@@ -1029,7 +1034,7 @@ textarea:focus-visible {
     align-items: center;
   }
 
-  .page-intro__card--split h1 {
+.page-intro__card--split h1 {
     max-width: 12ch;
     font-size: clamp(2.5rem, 3.6vw, 4rem);
     line-height: 0.95;

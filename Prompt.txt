@@ -1,0 +1,210 @@
+You are an expert full-stack developer, UX designer, and branding specialist.
+
+Your task is to completely scrape, analyze, and rebuild the website:
+
+https://hebamme-rieke.de/
+
+---
+
+# STEP 1 — SCRAPE & EXTRACT
+
+* Crawl the entire website
+* Extract:
+
+  * HTML
+  * CSS
+  * JS
+  * images
+  * text content
+  * structure (pages, navigation)
+* Reconstruct the full site locally
+
+Then:
+
+* Map the full information architecture
+* Identify all sections and components
+
+---
+
+# STEP 2 — ANALYZE CURRENT WEBSITE
+
+Evaluate:
+
+* UX structure
+* visual hierarchy
+* typography
+* color usage
+* spacing
+* responsiveness
+* conversion flow
+
+Identify:
+
+* outdated design patterns
+* weak CTA placement
+* trust gaps
+* emotional disconnect
+
+---
+
+# STEP 3 — REBRAND STRATEGY
+
+This is NOT a tech website.
+This is a **midwife (Hebamme) personal service brand in Germany**.
+
+Core audience:
+
+* pregnant women
+* young mothers
+* families
+* emotional, vulnerable users
+
+Design goals:
+
+* build trust instantly
+* feel calm, soft, and safe
+* feel personal, not corporate
+* feel premium but warm
+
+---
+
+# BRAND DIRECTION
+
+Tone:
+
+* warm
+* empathetic
+* reassuring
+* personal
+
+Visual style:
+
+* soft, airy layout
+* lots of whitespace
+* rounded edges
+* gentle shadows
+* organic flow (no harsh grids)
+
+Color palette:
+
+* base: warm white / cream
+* accents: soft violet, sage green, dusty pink
+* avoid harsh black → use dark gray instead
+
+Typography:
+
+* headings: elegant serif OR soft modern serif
+* body: clean sans-serif (high readability)
+* large font sizes (accessibility)
+
+---
+
+# STEP 4 — UX RESTRUCTURE
+
+Create a modern structure:
+
+1. HERO SECTION
+
+* emotional image
+* clear value proposition
+* CTA: "Betreuung anfragen"
+
+2. TRUST SECTION
+
+* short intro
+* credentials
+* experience
+* certifications
+
+3. SERVICES (CLEAR CARDS)
+
+* Schwangerschaft
+* Wochenbett
+* Kurse
+* Beratung
+
+4. ABOUT (HUMAN STORY)
+
+* personal image
+* story-driven text
+
+5. PROCESS / HOW IT WORKS
+
+* simple steps
+
+6. TESTIMONIALS (IMPORTANT)
+
+* emotional proof
+
+7. CTA SECTION
+
+* strong call to action
+
+8. CONTACT
+
+* form + phone + location
+* easy and fast
+
+---
+
+# STEP 5 — DESIGN SYSTEM
+
+Create reusable components:
+
+* buttons (rounded, soft)
+* cards
+* sections
+* spacing system
+* typography scale
+
+---
+
+# STEP 6 — BUILD NEW WEBSITE
+
+Requirements:
+
+* fully responsive
+* mobile-first
+* fast loading
+* accessible
+
+Tech:
+
+* clean modern HTML/CSS (or React if needed)
+* no heavy frameworks unless necessary
+
+---
+
+# STEP 7 — CONVERSION OPTIMIZATION
+
+Add:
+
+* multiple CTAs
+* sticky contact button (mobile)
+* trust indicators (certifications, experience)
+* emotional imagery
+
+---
+
+# STEP 8 — FINAL OUTPUT
+
+Deliver:
+
+* full rebuilt website code
+* structured components
+* optimized layout
+* improved copy (keep German language)
+
+---
+
+# IMPORTANT NOTES
+
+* DO NOT make it look like a startup or SaaS product
+* DO NOT use harsh or overly modern tech design trends
+* PRIORITIZE emotional trust over visual flashiness
+* This is a “human service” website, not a digital product
+
+---
+
+Your goal:
+Transform this outdated midwife website into a **modern, emotionally compelling, high-converting personal brand website**.
