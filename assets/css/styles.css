@@ -1281,7 +1281,7 @@ p {
   display: grid;
   grid-template-columns: minmax(0, 1.18fr) minmax(320px, 0.82fr);
   gap: 1rem;
-  align-items: start;
+  align-items: stretch;
 }
 
 .course-showcase__stack,
@@ -1313,7 +1313,9 @@ p {
 .course-card--featured {
   grid-template-columns: minmax(220px, 0.96fr) minmax(0, 1.04fr);
   padding: 1.1rem;
-  align-items: start;
+  align-items: stretch;
+  min-height: 100%;
+  height: 100%;
 }
 
 .course-card__content {
@@ -1353,11 +1355,17 @@ p {
 }
 
 .course-card--featured .course-card__content {
-  align-content: start;
+  min-height: 100%;
+  grid-template-rows: auto auto auto auto 1fr auto;
+  align-content: stretch;
 }
 
 .course-card--featured .check-list {
   gap: 0.7rem;
+}
+
+.course-card--featured .course-card__footer {
+  margin-top: auto;
 }
 
 .course-card--compact {
