@@ -1337,6 +1337,9 @@ p {
 }
 
 .course-card__image {
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
   overflow: hidden;
   border-radius: 20px;
   aspect-ratio: 1.32 / 0.82;
