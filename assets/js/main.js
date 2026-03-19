@@ -17,6 +17,10 @@
   const footerContainer = document.getElementById("site-footer");
   const mobileCta = document.getElementById("mobile-cta");
 
+  function resolveHref(href) {
+    return new URL(href, document.baseURI).href;
+  }
+
   function icon(name) {
     const icons = {
       menu: '<svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>',
@@ -38,6 +42,7 @@
 
   function renderHeader() {
     if (!navContainer) return;
+    const contactHref = resolveHref("kontakt.html#kontaktformular");
 
     const nav = navItems
       .map((item) => {
@@ -72,7 +77,7 @@
               <ul class="site-nav__list">${nav}</ul>
             </div>
           </nav>
-          <a class="site-header__cta" href="kontakt.html#kontaktformular">Betreuung anfragen</a>
+          <a class="site-header__cta" href="${contactHref}">Betreuung anfragen</a>
         </div>
       </header>
     `;
@@ -126,9 +131,43 @@
   function renderMobileCta() {
     if (!mobileCta) return;
     const isContactPage = document.body?.dataset.page === "contact";
-    mobileCta.href = isContactPage ? "#kontaktformular" : "kontakt.html#kontaktformular";
+    mobileCta.href = isContactPage
+      ? `${window.location.href.split("#")[0]}#kontaktformular`
+      : resolveHref("kontakt.html#kontaktformular");
     mobileCta.setAttribute("aria-label", "Zum Kontaktformular");
     mobileCta.innerHTML = `${icon("mail")}<span class="mobile-sticky-cta__label">Kontakt</span>`;
+  }
+
+  function prefillContactForm() {
+    const form = document.querySelector(".contact-form[data-mail-form]");
+    if (!form) return;
+
+    const params = new URLSearchParams(window.location.search);
+    const course = (params.get("course") || "").toLowerCase();
+    const messageField = form.querySelector('[name="message"]');
+    const phoneField = form.querySelector('[name="phone"]');
+
+    const courseLabels = {
+      geburtsvorbereitung: "Geburtsvorbereitung",
+      rueckbildung: "Rückbildung",
+      babymassage: "Babymassage",
+      kanga: "Kanga",
+    };
+
+    const label = courseLabels[course];
+    if (label && messageField && !messageField.value.trim()) {
+      form.dataset.subject = `Kursanfrage: ${label}`;
+      messageField.value = `Hallo Rieke,\n\nich interessiere mich für den Kurs „${label}“ und möchte gern wissen, ob aktuell ein Platz frei ist.\n\nViele Grüße`;
+    }
+
+    const note = form.querySelector(".form-note");
+    if (note) {
+      note.textContent = "Beim Senden öffnet sich dein E-Mail-Programm. Deine Antwortadresse wird automatisch aus deinem Mailkonto übernommen.";
+    }
+
+    if (phoneField && !phoneField.placeholder) {
+      phoneField.placeholder = "Optional";
+    }
   }
 
   function enhanceForms() {
@@ -137,19 +176,18 @@
         event.preventDefault();
         const data = new FormData(form);
         const name = (data.get("name") || "").toString().trim();
-        const email = (data.get("email") || "").toString().trim();
         const phone = (data.get("phone") || "").toString().trim();
+        const dueDate = (data.get("dueDate") || "").toString().trim();
         const message = (data.get("message") || "").toString().trim();
-        const subject = encodeURIComponent(`Anfrage von ${name || "Website"}`);
-        const body = encodeURIComponent(
-          [
-            `Name: ${name}`,
-            `E-Mail: ${email}`,
-            `Telefon: ${phone}`,
-            "",
-            message,
-          ].join("\n")
-        );
+        const configuredSubject = form.dataset.subject?.trim();
+        const subject = encodeURIComponent(configuredSubject || `Anfrage von ${name || "Website"}`);
+        const lines = [];
+        if (name) lines.push(`Name: ${name}`);
+        if (phone) lines.push(`Telefon: ${phone}`);
+        if (dueDate) lines.push(`Voraussichtlicher Entbindungstermin: ${dueDate}`);
+        if (lines.length) lines.push("");
+        lines.push(message);
+        const body = encodeURIComponent(lines.join("\n"));
         window.location.href = `mailto:info@hebamme-rieke.de?subject=${subject}&body=${body}`;
       });
     });
@@ -159,6 +197,7 @@
     renderHeader();
     renderFooter();
     renderMobileCta();
+    prefillContactForm();
     enhanceForms();
     const year = document.getElementById("year");
     if (year) year.textContent = String(new Date().getFullYear());
