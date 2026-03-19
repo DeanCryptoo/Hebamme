@@ -20,8 +20,7 @@
   function syncHeaderOffset() {
     const header = navContainer?.querySelector(".site-header");
     if (!header) return;
-    const offset = window.matchMedia("(min-width: 960px)").matches ? `${Math.ceil(header.offsetHeight)}px` : "0px";
-    document.documentElement.style.setProperty("--header-offset", offset);
+    document.documentElement.style.setProperty("--header-offset", `${Math.ceil(header.offsetHeight)}px`);
   }
 
   function resolveHref(href) {

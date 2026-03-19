@@ -295,8 +295,10 @@ p {
 }
 
 .site-header {
-  position: sticky;
+  position: fixed;
   top: 0;
+  left: 0;
+  right: 0;
   z-index: 40;
   background: rgba(248, 243, 238, 0.92);
   border-bottom: 1px solid rgba(32, 25, 24, 0.05);
@@ -305,15 +307,6 @@ p {
 
 #site-header {
   height: var(--header-offset, 0px);
-}
-
-@media (min-width: 960px) {
-  .site-header {
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-  }
 }
 
 .site-header__top {
