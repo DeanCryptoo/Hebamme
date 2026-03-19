@@ -125,7 +125,10 @@
 
   function renderMobileCta() {
     if (!mobileCta) return;
-    mobileCta.innerHTML = `${icon("phone")}<span>Anrufen</span>`;
+    const isContactPage = document.body?.dataset.page === "contact";
+    mobileCta.href = isContactPage ? "#kontaktformular" : "kontakt.html#kontaktformular";
+    mobileCta.setAttribute("aria-label", "Zum Kontaktformular");
+    mobileCta.innerHTML = `${icon("mail")}<span>Kontakt</span>`;
   }
 
   function enhanceForms() {
