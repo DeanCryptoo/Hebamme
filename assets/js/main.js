@@ -17,6 +17,13 @@
   const footerContainer = document.getElementById("site-footer");
   const mobileCta = document.getElementById("mobile-cta");
 
+  function syncHeaderOffset() {
+    const header = navContainer?.querySelector(".site-header");
+    if (!header) return;
+    const offset = window.matchMedia("(min-width: 960px)").matches ? `${Math.ceil(header.offsetHeight)}px` : "0px";
+    document.documentElement.style.setProperty("--header-offset", offset);
+  }
+
   function resolveHref(href) {
     return new URL(href, document.baseURI).href;
   }
@@ -105,7 +112,9 @@
     };
 
     closeOnMobile();
+    syncHeaderOffset();
     window.addEventListener("resize", closeOnMobile, { passive: true });
+    window.addEventListener("resize", syncHeaderOffset, { passive: true });
   }
 
   function renderFooter() {
