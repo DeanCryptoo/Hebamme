@@ -72,7 +72,7 @@
               <ul class="site-nav__list">${nav}</ul>
             </div>
           </nav>
-          <a class="site-header__cta" href="kontakt.html">Betreuung anfragen</a>
+          <a class="site-header__cta" href="kontakt.html#kontaktformular">Betreuung anfragen</a>
         </div>
       </header>
     `;
@@ -128,7 +128,7 @@
     const isContactPage = document.body?.dataset.page === "contact";
     mobileCta.href = isContactPage ? "#kontaktformular" : "kontakt.html#kontaktformular";
     mobileCta.setAttribute("aria-label", "Zum Kontaktformular");
-    mobileCta.innerHTML = `${icon("mail")}<span>Kontakt</span>`;
+    mobileCta.innerHTML = `${icon("mail")}<span class="mobile-sticky-cta__label">Kontakt</span>`;
   }
 
   function enhanceForms() {

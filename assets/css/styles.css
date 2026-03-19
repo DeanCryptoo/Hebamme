@@ -1809,6 +1809,58 @@ p {
     grid-template-columns: 1fr;
   }
 
+  .contact-band {
+    gap: 1.1rem;
+    padding: 1.25rem 0.9rem;
+    border-radius: 26px;
+  }
+
+  .contact-band__content {
+    display: grid;
+    gap: 0.7rem;
+  }
+
+  .contact-band__list {
+    gap: 0.55rem;
+    margin-top: 0.2rem;
+  }
+
+  .contact-band__form {
+    padding: 0.8rem;
+    border-radius: 16px;
+  }
+
+  .field + .field {
+    margin-top: 0.5rem;
+  }
+
+  .field label {
+    font-size: 0.68rem;
+    letter-spacing: 0.07em;
+  }
+
+  .field input,
+  .field textarea {
+    padding: 0.72rem 0.82rem;
+  }
+
+  .field textarea {
+    min-height: 5.25rem;
+  }
+
+  .button--light {
+    min-height: 2.65rem;
+  }
+
+  .contact-band h2 {
+    font-size: clamp(1.85rem, 8vw, 2.35rem);
+  }
+
+  .contact-band p,
+  .contact-band li {
+    font-size: 0.98rem;
+  }
+
   .contact-card h2,
   .spotlight__copy h2,
   .story-card h2,
@@ -1822,11 +1874,26 @@ p {
 
   .mobile-sticky-cta {
     display: inline-flex;
-    left: 50%;
-    right: auto;
-    min-width: 9.75rem;
+    left: auto;
+    right: 0.65rem;
+    bottom: 0.65rem;
+    width: 2.95rem;
+    height: 2.95rem;
+    min-width: 0;
     justify-content: center;
-    transform: translateX(-50%);
+    gap: 0;
+    padding: 0;
+    font-size: 0;
+    transform: none;
+  }
+
+  .mobile-sticky-cta__label {
+    display: none;
+  }
+
+  .mobile-sticky-cta svg {
+    width: 1.1rem;
+    height: 1.1rem;
   }
 }
 
