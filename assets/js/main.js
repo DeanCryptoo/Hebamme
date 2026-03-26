@@ -157,7 +157,7 @@
 
     const courseLabels = {
       geburtsvorbereitung: "Geburtsvorbereitung",
-      rueckbildung: "Rückbildung",
+      rueckbildung: "R\u00fcckbildung",
       babymassage: "Babymassage",
       kanga: "Kanga",
     };
@@ -165,12 +165,12 @@
     const label = courseLabels[course];
     if (label && messageField && !messageField.value.trim()) {
       form.dataset.subject = `Kursanfrage: ${label}`;
-      messageField.value = `Hallo Rieke,\n\nich interessiere mich für den Kurs „${label}“ und möchte gern wissen, ob aktuell ein Platz frei ist.\n\nViele Grüße`;
+      messageField.value = `Hallo Rieke,\n\nich interessiere mich f\u00fcr den Kurs \u201e${label}\u201c und m\u00f6chte gern wissen, ob aktuell ein Platz frei ist.\n\nViele Gr\u00fc\u00dfe`;
     }
 
     const note = form.querySelector(".form-note");
     if (note) {
-      note.textContent = "Beim Senden öffnet sich dein E-Mail-Programm. Deine Antwortadresse wird automatisch aus deinem Mailkonto übernommen.";
+      note.textContent = "Beim Senden \u00f6ffnet sich dein E-Mail-Programm. Deine Antwortadresse wird automatisch aus deinem Mailkonto \u00fcbernommen.";
     }
 
     if (phoneField && !phoneField.placeholder) {
