@@ -767,6 +767,24 @@ b {
   max-width: none;
 }
 
+.experience-band__portrait {
+  width: min(100%, 18rem);
+  margin-top: 0.55rem;
+  overflow: hidden;
+  border: 10px solid rgba(255, 255, 255, 0.3);
+  border-radius: 2.2rem 2.2rem 1rem 2.2rem;
+  box-shadow: var(--shadow-lg);
+  background: rgba(255, 250, 246, 0.72);
+}
+
+.experience-band__portrait img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  object-position: center top;
+}
+
 .focus-board {
   display: grid;
   grid-template-columns: minmax(0, 1.02fr) minmax(340px, 0.88fr);
@@ -1941,6 +1959,10 @@ b {
     padding-top: 0;
   }
 
+  .experience-band__portrait {
+    width: min(100%, 15rem);
+  }
+
   .visual-stack__main {
     min-height: 19rem;
   }
@@ -2024,6 +2046,13 @@ b {
   .focus-board__copy h2 {
     max-width: 100%;
     font-size: clamp(2.45rem, 11vw, 3.6rem);
+  }
+
+  .experience-band__portrait {
+    width: min(100%, 12.5rem);
+    margin-top: 0.35rem;
+    border-width: 8px;
+    border-radius: 1.8rem 1.8rem 0.95rem 1.8rem;
   }
 
   .meter__head {
